@@ -1,0 +1,265 @@
+/* Container Styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.fullScreenContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.loaderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.loadingText {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Size Variants */
+.small {
+  transform: scale(0.6);
+}
+
+.medium {
+  transform: scale(1);
+}
+
+.large {
+  transform: scale(1.4);
+}
+
+/* ============================================
+   SPINNER VARIANT (Rotating Circle)
+   ============================================ */
+.spinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.spinnerCircle {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid black;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   DOTS VARIANT (Bouncing Dots)
+   ============================================ */
+.dots {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: 60px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background: black;
+  border-radius: 50%;
+  animation: bounce 1.4s ease-in-out infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   PULSE VARIANT (Expanding Rings)
+   ============================================ */
+.pulse {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.pulseRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid black;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse 2s ease-out infinite;
+}
+
+.pulseRing:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.pulseRing:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.pulseRing:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   BARS VARIANT (Equalizer Bars)
+   ============================================ */
+.bars {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  height: 60px;
+}
+
+.bar {
+  width: 8px;
+  height: 40px;
+  background: black;
+  border-radius: 4px;
+  animation: stretch 1.2s ease-in-out infinite;
+}
+
+.bar:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.bar:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.bar:nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+@keyframes stretch {
+  0%, 40%, 100% {
+    height: 20px;
+  }
+  20% {
+    height: 50px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 640px) {
+  .loadingText {
+    font-size: 14px;
+  }
+
+  .small {
+    transform: scale(0.5);
+  }
+
+  .medium {
+    transform: scale(0.8);
+  }
+
+  .large {
+    transform: scale(1.1);
+  }
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .spinner,
+  .dots,
+  .pulse,
+  .bars,
+  .loadingText {
+    animation: none;
+  }
+
+  .spinnerCircle {
+    border-top-color: black;
+    opacity: 0.7;
+  }
+
+  .dot,
+  .bar {
+    opacity: 0.7;
+  }
+}

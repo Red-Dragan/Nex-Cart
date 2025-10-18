@@ -1,0 +1,397 @@
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 0%;
+  height: 80px;
+  gap: 20px;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 0;
+  margin-right: 50px;
+  padding: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #282c3f;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  /* letter-spacing: 0.3px; */
+  padding: 28px 13px;
+  display: block;
+  border-bottom: 4px solid transparent;
+  transition: all 0.3s ease;
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.navLink:hover {
+  color: #ee5f73;
+  border-bottom-color: #ee5f73;
+}
+
+.searchContainer {
+  flex: 1;
+  max-width: 550px;
+  margin: 0 20px;
+}
+
+.searchForm {
+  position: relative;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 11px 20px 11px 50px;
+  border: 1px solid #f5f5f6;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f5f5f6;
+  transition: all 0.3s ease;
+  color: #282c3f;
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.searchInput:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: #d4d5d9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.searchInput::placeholder {
+  color: #696b79;
+  font-weight: 400;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
+  /* margin-left: 70px; */
+}
+
+.actionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px 5px;
+  transition: all 0.2s ease;
+  position: relative;
+  height: 50px;
+  display: inline-block;
+}
+
+.actionItem:hover {
+  transform: translateY(-1px);
+}
+
+.actionItem:hover .actionText {
+  color: #ee5f73;
+  text-decoration: none;
+}
+
+.actionItem:hover svg path {
+  stroke: #ee5f73;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -15px;
+  right: 0px;
+  background-color: #ff3f6c;
+  color: white;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px;
+  line-height: 1;
+}
+
+.actionText {
+  font-size: 12px;
+  font-weight: 800;
+  color: #282c3f;
+  margin-top: 6px;
+  white-space: nowrap;
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 3%;
+  }
+
+  .navLinks {
+    gap: 0;
+  }
+
+  .navLink {
+    padding: 28px 15px;
+    font-size: 13px;
+  }
+
+  .searchContainer {
+    max-width: 400px;
+    margin: 0 15px;
+  }
+
+  .actions {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navLink {
+    padding: 28px 12px;
+    font-size: 12px;
+  }
+
+  .searchContainer {
+    max-width: 350px;
+  }
+
+  .actions {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .searchContainer {
+    max-width: none;
+    margin: 0 10px;
+  }
+
+  .searchInput {
+    padding: 9px 15px 9px 40px;
+    font-size: 13px;
+  }
+
+  .actions {
+    gap: 15px;
+  }
+
+  .actionText {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+
+  .actionItem svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .actionText {
+    display: none;
+  }
+
+  .actionItem {
+    padding: 5px;
+  }
+}
+
+/* Add these new dropdown styles at the end of your existing CSS */
+
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+  min-width: 300px;
+  max-width: 400px;
+  margin-top: 0;
+  border-radius: 0 0 4px 4px;
+  max-height: 500px;
+  overflow-y: auto;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownContent {
+  padding: 10px 0;
+}
+
+.dropdownLoading {
+  padding: 30px 20px;
+  text-align: center;
+  color: #696b79;
+  font-size: 14px;
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+}
+
+.productItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  gap: 15px;
+}
+
+.productItem:hover {
+  background-color: #fef5f7;
+  border-left-color: #ee5f73;
+}
+
+.productTitle {
+  font-size: 14px;
+  color: #282c3f;
+  font-weight: 400;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.productPrice {
+  font-size: 13px;
+  color: #282c3f;
+  font-weight: 700;
+  white-space: nowrap;
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.productItem:hover .productTitle {
+  color: #ee5f73;
+  font-weight: 600;
+}
+
+.productItem:hover .productPrice {
+  color: #ee5f73;
+}
+
+.noProducts {
+  padding: 30px 20px;
+  text-align: center;
+  color: #94969f;
+  font-size: 14px;
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Custom scrollbar for dropdown */
+.dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background: #d4d5d9;
+  border-radius: 3px;
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+  background: #b0b2b8;
+}
+
+/* Ensure navItem has proper positioning */
+.navItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 1024px) {
+  .dropdown {
+    min-width: 280px;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    display: none;
+  }
+}

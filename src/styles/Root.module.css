@@ -1,0 +1,48 @@
+.mainContainer {
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 4%;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+/* Alternative layout options */
+
+/* Full width without max-width */
+.mainContainerFullWidth {
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  padding: 20px 4%;
+  background-color: var(--bg-primary);
+}
+
+/* Container with side padding only */
+.mainContainerNoPadding {
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .mainContainer {
+    padding: 15px 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 15px 20px;
+    min-height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContainer {
+    padding: 10px 15px;
+  }
+}
