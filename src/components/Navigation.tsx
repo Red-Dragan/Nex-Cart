@@ -114,7 +114,7 @@ const Navigation: React.FC = () => {
         {/* User Actions */}
         <div className={styles.actions}>
           <button className={styles.actionItem}>
-            <Link className={styles.actionText} to="/profile">
+            <Link className={styles.actionText} to="/register">
               Profile
             </Link>
           </button>

@@ -10,8 +10,11 @@ import NavPages, { loadCategoryProducts } from "./pages/NavPages";
 import SearchProduct, { productSearchLoader } from "./components/SearchProduct";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
-import Profile from "./pages/Profile";
+import Register from "./pages/Register";
 import { WishlistProvider } from "./context/WishLIstContext";
+import Login from "./pages/Login";
+import { registerAction } from "./components/registerAction";
+import { loginAction } from "./components/LoginAction";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +36,8 @@ const router = createBrowserRouter([
       },
       { path: "cart", element: <Cart /> },
       { path: "wishlist", element: <Wishlist /> },
-      { path: "profile", element: <Profile /> },
+      { path: "Register", element: <Register />, action: registerAction},
+      { path: "login", element: <Login />, action: loginAction}
     ],
   },
 ]);
